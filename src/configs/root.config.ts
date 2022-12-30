@@ -1,5 +1,4 @@
 import config from '@configs/configuration';
-import { LogModule } from '@modules/log/log.module';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import Joi from 'joi';
@@ -16,7 +15,6 @@ const RootModule = [
     ttl: config.APP_THROTTLE.TTL,
     limit: config.APP_THROTTLE.LIMIT,
   }),
-  LogModule,
 ];
 
 export default RootModule;

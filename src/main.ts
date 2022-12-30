@@ -2,6 +2,8 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from '@app';
 import { NestFactory } from '@nestjs/core';
 import appConfig from '@configs/app.config';
+import { LoggerService } from '@commons/logger/logger.service';
+import config from '@configs/configuration';
 
 declare const module: any;
 
@@ -13,7 +15,10 @@ async function bootstrap() {
   await appConfig(app);
 
   await app.listen(process.env.PORT).then(async () => {
-    console.log('Server is listening on:', await app.getUrl());
+    LoggerService.log(
+      '🚀 Listenning on ' + (await app.getUrl()) + `/${config.PREFIX}`,
+      `Server Started Successfully`,
+    );
   });
 
   if (module.hot) {
