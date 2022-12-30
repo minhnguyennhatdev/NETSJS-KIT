@@ -2,9 +2,14 @@ import config from '@configs/configuration';
 import { LogModule } from '@modules/log/log.module';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
+import Joi from 'joi';
+import validationEnv from '@configs/joi.config';
 
 const RootModule = [
   ConfigModule.forRoot({
+    validationSchema: Joi.object({
+      validationEnv,
+    }),
     isGlobal: true,
   }),
   ThrottlerModule.forRoot({
