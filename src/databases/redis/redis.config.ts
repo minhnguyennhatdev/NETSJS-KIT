@@ -1,7 +1,7 @@
 const redisConfig = {
-  KEY: {
-    LIST: 'list',
-    CACHE_ID: (id: string) => `id:${id}`,
+  KEYS: {
+    DEMO: 'demo',
+    DEMO_ID: (id: string) => `demo:${id}`,
   },
 };
 

@@ -14,10 +14,10 @@ async function bootstrap() {
 
   await appConfig(app);
 
-  await app.listen(process.env.PORT).then(async () => {
+  await app.listen(config.PORT).then(async () => {
     LoggerService.log(
       '🚀 Listenning on ' + (await app.getUrl()) + `/${config.PREFIX}`,
-      `Server Started Successfully`,
+      `Server Started Successfully!`,
     );
   });
 

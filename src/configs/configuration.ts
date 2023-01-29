@@ -12,9 +12,9 @@ const config = {
   },
   KAFKA: {
     BROKERS: [process.env.KAFKA_BROKER ?? 'localhost:9092'],
-    SERVICE_NAME: process.env.KAFKA_SERVICE_NAME ?? 'LOG_SERVICE',
-    CLIENT_ID: process.env.KAFKA_CLIENT_ID ?? 'log-client',
-    GROUP_ID: process.env.KAFKA_GROUP_ID ?? 'log-consumer',
+    SERVICE_NAME: process.env.KAFKA_SERVICE_NAME ?? 'DEMO_SERVICE',
+    CLIENT_ID: process.env.KAFKA_CLIENT_ID ?? 'demo-client',
+    GROUP_ID: process.env.KAFKA_GROUP_ID ?? 'demo-consumer',
   },
   REDIS: {
     HOST: process.env.REDIS_HOST ?? 'http:localhost',
